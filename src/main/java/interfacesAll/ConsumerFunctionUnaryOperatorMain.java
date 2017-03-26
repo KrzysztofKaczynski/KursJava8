@@ -40,17 +40,13 @@ public class ConsumerFunctionUnaryOperatorMain {
 
     System.out.println(returnPrice.apply(book1));
 
-
     Function<String, String> addString = (s) -> "Cena: " +s;
     System.out.println(addString.compose(returnPrice).apply(book1));
 
-
     System.out.println(returnPrice.andThen(addString).apply(book1));
-
 
     Function<Book, Book> returnBook = Function.identity();
     Function<Book, Book> returnBook2 = book -> book;
-
 
     System.out.println(returnBook2.apply(book1));
 
