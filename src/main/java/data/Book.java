@@ -5,13 +5,17 @@ package data;
  * https://www.youtube.com/zacznijprogramowac
  * http://zacznijprogramowac.net/
  */
-public class Book {
+public class Book implements Cloneable{
 
-  public Book(double price, String cover) {
+
+
+  public Book(double price, String title, String cover) {
     this.price = price;
+    this.title = title;
     this.cover = cover;
   }
 
+  public String title;
   public double price;
   public String cover;
 
@@ -35,5 +39,18 @@ public class Book {
     result = (int) (temp ^ (temp >>> 32));
     result = 31 * result + (cover != null ? cover.hashCode() : 0);
     return result;
+  }
+
+  @Override public String toString() {
+    return "Book{" + "title='" + title + '\'' + ", price=" + price + ", cover='" + cover + '\'' + '}';
+  }
+
+  public Book clone()  {
+    try {
+      return  (Book) super.clone();
+    } catch (CloneNotSupportedException e) {
+      e.printStackTrace();
+    }
+    return null;
   }
 }

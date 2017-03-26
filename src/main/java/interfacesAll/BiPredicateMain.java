@@ -15,8 +15,8 @@ public class BiPredicateMain {
 
   public static void main(String[] args) {
 
-    Book book1 = new Book(39.99, "twarda");
-    Book book2 = new Book(29.99, "twarda");
+    Book book1 = new Book(39.99, "Czysty kod","twarda");
+    Book book2 = new Book(29.99, "Pani jeziora","twarda");
 
     BiPredicate<Book, Book> isMoreExpensive = (bookFirst, bookSecond) -> bookFirst.price > bookSecond.price;
 
