@@ -7,7 +7,8 @@ package data;
  */
 public class Book implements Cloneable{
 
-
+  public Book() {
+  }
 
   public Book(double price, String title, String cover) {
     this.price = price;
@@ -15,9 +16,17 @@ public class Book implements Cloneable{
     this.cover = cover;
   }
 
+  public Book(double price, String title, String cover, boolean isPromotion) {
+    this.title = title;
+    this.price = price;
+    this.cover = cover;
+    this.isPromotion = isPromotion;
+  }
+
   public String title;
   public double price;
   public String cover;
+  public boolean isPromotion;
 
   @Override public boolean equals(Object o) {
     if (this == o)
@@ -52,5 +61,37 @@ public class Book implements Cloneable{
       e.printStackTrace();
     }
     return null;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public double getPrice() {
+    return price;
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
+  }
+
+  public String getCover() {
+    return cover;
+  }
+
+  public void setCover(String cover) {
+    this.cover = cover;
+  }
+
+  public boolean isPromotion() {
+    return isPromotion;
+  }
+
+  public void setPromotion(boolean promotion) {
+    isPromotion = promotion;
   }
 }
