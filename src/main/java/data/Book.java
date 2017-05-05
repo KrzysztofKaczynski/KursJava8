@@ -28,30 +28,39 @@ public class Book implements Cloneable{
   public String cover;
   public boolean isPromotion;
 
-  @Override public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
     Book book = (Book) o;
 
-    if (Double.compare(book.price, price) != 0)
-      return false;
+    if (Double.compare(book.price, price) != 0) return false;
+    if (isPromotion != book.isPromotion) return false;
+    if (title != null ? !title.equals(book.title) : book.title != null) return false;
     return cover != null ? cover.equals(book.cover) : book.cover == null;
   }
 
-  @Override public int hashCode() {
+  @Override
+  public int hashCode() {
     int result;
     long temp;
+    result = title != null ? title.hashCode() : 0;
     temp = Double.doubleToLongBits(price);
-    result = (int) (temp ^ (temp >>> 32));
+    result = 31 * result + (int) (temp ^ (temp >>> 32));
     result = 31 * result + (cover != null ? cover.hashCode() : 0);
+    result = 31 * result + (isPromotion ? 1 : 0);
     return result;
   }
 
-  @Override public String toString() {
-    return "Book{" + "title='" + title + '\'' + ", price=" + price + ", cover='" + cover + '\'' + '}';
+  @Override
+  public String toString() {
+    return "Book{" +
+            "title='" + title + '\'' +
+            ", price=" + price +
+            ", cover='" + cover + '\'' +
+            ", isPromotion=" + isPromotion +
+            '}';
   }
 
   public Book clone()  {
