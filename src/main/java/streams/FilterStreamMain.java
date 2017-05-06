@@ -7,7 +7,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+/**
+ * Created by davit.
+ * https://www.youtube.com/zacznijprogramowac
+ * http://zacznijprogramowac.net/
+ */
 public class FilterStreamMain {
 
 
