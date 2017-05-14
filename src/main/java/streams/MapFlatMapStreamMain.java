@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Created by davit.
+ * Created by zacznijprogramowac.
  * https://www.youtube.com/zacznijprogramowac
  * http://zacznijprogramowac.net/
  */
