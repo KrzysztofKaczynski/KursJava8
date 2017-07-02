@@ -4,7 +4,6 @@ import data.Book;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Created by zacznijprogramowac.
